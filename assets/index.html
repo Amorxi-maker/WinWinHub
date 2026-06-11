@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="WinWin Fan Hub — 董思成 Fan Resource Center" />
+    <title>WINWIN Fan Hub — 董思成</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav" id="navbar">
+      <div class="container nav-inner">
+        <a class="nav-logo" onclick="navigateTo('home')">WIN<span>WIN</span></a>
+
+        <ul class="nav-menu">
+          <!-- HOME -->
+          <li class="nav-menu-item">
+            <a class="nav-menu-link" onclick="navigateTo('home')">Home</a>
+          </li>
+
+          <!-- Categories Dropdown -->
+          <li class="nav-menu-item">
+            <button class="nav-menu-btn" data-dropdown="categories">
+              Categories
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="dropdown" id="dropdown-categories">
+              <div class="dropdown-item featured" onclick="navigateTo('category','tv-series')">
+                <div class="dropdown-item-icon tv">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>TV Series</h4>
+                  <p>影视剧作品集</p>
+                </div>
+              </div>
+              <div class="dropdown-item" onclick="navigateTo('category','variety-shows')">
+                <div class="dropdown-item-icon variety">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>Variety Shows</h4>
+                  <p>综艺节目录制</p>
+                </div>
+              </div>
+              <div class="dropdown-item" onclick="navigateTo('category','stage-focus')">
+                <div class="dropdown-item-icon stage">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>Stage Focus</h4>
+                  <p>舞台直拍与演出</p>
+                </div>
+              </div>
+              <div class="dropdown-item" onclick="navigateTo('category','interview')">
+                <div class="dropdown-item-icon interview">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>Interview</h4>
+                  <p>采访与对话</p>
+                </div>
+              </div>
+              <div class="dropdown-item" onclick="navigateTo('category','fan-made')">
+                <div class="dropdown-item-icon fanmade">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>Fan-made</h4>
+                  <p>粉丝创作内容</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Gallery Dropdown -->
+          <li class="nav-menu-item">
+            <button class="nav-menu-btn" data-dropdown="gallery">
+              Gallery
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="dropdown" id="dropdown-gallery">
+              <div class="dropdown-item" onclick="navigateTo('gallery','guzhuang')">
+                <div class="dropdown-item-icon guzhuang">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>Period Costume</h4>
+                  <p>古装造型与剧照</p>
+                </div>
+              </div>
+              <div class="dropdown-item" onclick="navigateTo('gallery','sifu')">
+                <div class="dropdown-item-icon sifu">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>Casual Wear</h4>
+                  <p>日常私服穿搭</p>
+                </div>
+              </div>
+              <div class="dropdown-item" onclick="navigateTo('gallery','hongtan')">
+                <div class="dropdown-item-icon hongtan">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>Red Carpet & Events</h4>
+                  <p>红毯与活动盛装</p>
+                </div>
+              </div>
+              <div class="dropdown-item" onclick="navigateTo('gallery','bizhi')">
+                <div class="dropdown-item-icon bizhi">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>HD Wallpapers</h4>
+                  <p>高清桌面壁纸合集</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- ABOUT -->
+          <li class="nav-menu-item">
+            <a class="nav-menu-link" onclick="navigateTo('about')">About</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="search-toggle" id="searchOpen" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <button class="mobile-toggle" id="mobileOpen" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" id="mobileClose">&times;</button>
+      <div class="mobile-nav-section">
+        <a class="mobile-nav-link home-link" onclick="navigateTo('home');closeMobileNav()">Home</a>
+      </div>
+      <div class="mobile-nav-section">
+        <h3>Categories</h3>
+        <a class="mobile-nav-link" onclick="navigateTo('category','tv-series');closeMobileNav()">TV Series / 影视剧</a>
+        <a class="mobile-nav-link" onclick="navigateTo('category','variety-shows');closeMobileNav()">Variety Shows / 综艺节目</a>
+        <a class="mobile-nav-link" onclick="navigateTo('category','stage-focus');closeMobileNav()">Stage Focus / 舞台直拍</a>
+        <a class="mobile-nav-link" onclick="navigateTo('category','interview');closeMobileNav()">Interview / 采访对话</a>
+        <a class="mobile-nav-link" onclick="navigateTo('category','fan-made');closeMobileNav()">Fan-made / 粉丝创作</a>
+      </div>
+      <div class="mobile-nav-section">
+        <h3>Gallery</h3>
+        <a class="mobile-nav-link" onclick="navigateTo('gallery','guzhuang');closeMobileNav()">Period Costume / 古装</a>
+        <a class="mobile-nav-link" onclick="navigateTo('gallery','sifu');closeMobileNav()">Casual Wear / 私服</a>
+        <a class="mobile-nav-link" onclick="navigateTo('gallery','hongtan');closeMobileNav()">Red Carpet / 活动红毯</a>
+        <a class="mobile-nav-link" onclick="navigateTo('gallery','bizhi');closeMobileNav()">HD Wallpapers / 高清壁纸</a>
+      </div>
+      <div class="mobile-nav-section">
+        <a class="mobile-nav-link home-link" onclick="navigateTo('about');closeMobileNav()">About / 关于</a>
+      </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索影视剧、综艺、舞台..." aria-label="Search" />
+        <button class="search-close" id="searchClose">&times;</button>
+      </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT (SPA) ========== -->
+    <main id="app"></main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="siteFooter">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">WIN<span>WIN</span> Fan Hub</div>
+          <ul class="footer-socials">
+            <li>
+              <a href="https://weibo.com/u/6589598837" target="_blank" rel="noopener" aria-label="Weibo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10.098 20.323c-3.977.391-7.414-1.406-7.672-4.02-.259-2.609 2.759-5.047 6.74-5.441 3.979-.394 7.413 1.404 7.671 4.018.259 2.6-2.759 5.049-6.739 5.443zM9.05 17.219c-.384.616-1.208.884-1.829.602-.612-.279-.793-.991-.406-1.593.379-.595 1.176-.861 1.793-.583.631.283.822.997.442 1.574zm1.27-1.627c-.141.237-.449.353-.689.253-.236-.09-.307-.366-.165-.601.14-.234.44-.35.672-.254.238.095.321.37.182.602zm.176-2.719c-1.893-.493-4.033.45-4.857 2.118-.836 1.704-.026 3.591 1.886 4.21 1.983.642 4.318-.341 5.132-2.179.8-1.793-.201-3.642-2.161-4.149z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/" target="_blank" rel="noopener" aria-label="Twitter / X">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- DISCLAIMER -->
+        <div class="disclaimer">
+          <h4>WINWIN Fan Hub免责声明 / Disclaimer</h4>
+          <p>本站仅为粉丝自制非盈利个人网站，不含有任何商业盈利行为。本站所有资源均来自网络收集，仅供同好交流分享。本站与董思成（WinWin）所属经纪公司（SM Entertainment）及国内官方工作室无任何官方或商业关联。</p>
+          <p class="disclaimer-en">This is a non-profit website fan-made exclusively for WinWin (Dong Sicheng). It is strictly for entertainment, archival, and fan-sharing purposes. This website is not affiliated with, endorsed by, managed by, or in any way officially connected to SM Entertainment or his official sub-labels/management studios.</p>
+        </div>
+
+        <div class="footer-copy">
+          &copy; 2025 WinWin Fan Hub. Fan-made project. Not affiliated with SM Entertainment.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ========== APPLICATION SCRIPT ========== -->
+    <script>
+    /* =============================================
+       DATA — All content based on Baidu Baike
+       ============================================= */
+    const CONTENT = {
+      'tv-series': {
+        title: 'TV Series',
+        subtitle: '影视剧作品',
+        desc: '董思成的影视作品合集——从古装轻喜剧到奇幻大剧，每一个角色都用心诠释。',
+        layout: 'featured',
+        items: [
+          { title: '五福临门', cover: 'images/wflm.jpg', url: 'https://www.mgtv.com/h/617394.html', intro: '角色：杨羡（领衔主演）| 2025 古装轻喜剧' },
+          { title: '良陈美锦', cover: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80', url: 'https://www.mgtv.com/h/749276.html', intro: '角色：叶限（领衔主演）| 2026 古装宅斗' },
+          { title: '子夜归', cover: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80', url: 'https://v.qq.com/x/cover/mzc002009y0nzq8/z4101m43ng6.html?ptag=bing.com', intro: '角色：蝠朝（友情出演）| 2025 古装奇幻爱情' },
+          { title: '冰雪谣', cover: 'https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600&q=80', url: 'https://v.qq.com/x/cover/mzc00200ckgcb17/g41006kc47f.html', intro: '角色：司徒威涟（主演）| 2024 民国奇幻' },
+          { title: '25小时恋爱', cover: 'https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=600&q=80', url: 'https://v.qq.com/x/cover/mzc0020035bn9hl/s0046k050t1.html', intro: '角色：言樾（领衔主演）| 2023 青春爱情' },
+          { title: '恰逢春', cover: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80', url: '#', intro: '角色：许凤佳（主演）| 2026 古装爱情' },
+          { title: '今天是太阳雨', cover: 'https://images.unsplash.com/photo-1574169208507-84376144848b?w=600&q=80', url: 'https://www.mgtv.com/h/817372.html', intro: '角色：陈砚周（主演）| 2026 青春爱情' },
+          { title: '明月苍茫', cover: 'https://images.unsplash.com/photo-1501612780327-4507b6c0f5f3?w=600&q=80', url: 'https://www.iqiyi.com/a_se8h2j6pn9.html', intro: '角色：莫提准（主演）| 待播 古装权谋' },
+          { title: '电视剧幕后花絮：片场日常记录',cover:'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1400&q=80',
+    url: "https://www.youtube.com/results?search_query=winwin+drama+behind+the+scenes",intro: 'Youtube' }
+        ],
+      'variety-shows': {
+        title: 'Variety Shows',
+        subtitle: '综艺节目',
+        desc: '从《奔跑吧》到《五十公里桃花坞》，舞台之外的WinWin同样精彩。',
+        layout: 'even',
+        items: [
+          { title: '五十公里桃花坞5', cover: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80', url: 'https://v.qq.com/x/cover/mzc002005od4txd/b4101hnrvpz.html', intro: '常驻嘉宾 | 腾讯视频' },
+          { title: '风华合伙人', cover: 'https://images.unsplash.com/photo-1574169208507-84376144848b?w=600&q=80', url: 'https://www.iqiyi.com/v_k86lvximww.html?vfrm=pcw_album_auto&rfr=https://www.google.com/', intro: '参演 | 2026 浙江卫视' },
+          { title: '灿烂的市集', cover: 'https://images.unsplash.com/photo-1501612780327-4507b6c0f5f3?w=600&q=80', url: 'https://www.iqiyi.com/v_xqbuvw79pc.html?vfrm=pcw_album_auto&rfr=https://cn.bing.com/', intro: '参演 | 2025 爱奇艺' },
+          { title: '奔跑吧9', cover: 'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=600&q=80', url: '#', intro: '参演 | 2021 浙江卫视' },
+          { title: '我们的师父', cover: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80', url: 'https://www.mgtv.com/h/328612.html', intro: '常驻嘉宾 | 2019 湖南卫视' },
+          { title: '少年威计划', cover: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80', url: 'https://v.youku.com/v_show/id_XNDI2OTM1NzA0OA==.html?&s=bdaa13d56dc24a85b8a5', intro: '参演 | 2019' },
+          { title: '天天向上', cover: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=600&q=80', url: '#', intro: '嘉宾 | 2016/2019 湖南卫视' },
+          { title: '快乐大本营', cover: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80', url: '#', intro: '嘉宾 | 2019 湖南卫视' }
+        ]
+      },
+      'stage-focus': {
+        title: 'Stage Focus',
+        subtitle: '舞台直拍',
+        desc: 'WayV & NCT 舞台直拍合集——中国舞、现代舞、扇子舞，每一个舞台瞬间都值得珍藏。',
+        layout: 'even',
+        items: [
+          { title: 'WayV Phantom Concert', cover: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=600&q=80', url: '#', intro: '2023 Phantom Tour' },
+          { title: 'Lemon Tree 唱跳舞台', cover: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=600&q=80', url: '#', intro: '风华合伙人 音乐节 | 2026' },
+          { title: 'Nectar 月之迷', cover: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80', url: '#', intro: 'WayV 中国舞直拍' },
+          { title: "90's Love 直拍", cover: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80', url: '#', intro: 'NCT U 白衣直拍' },
+          { title: 'Bad Alive 直拍', cover: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80', url: '#', intro: 'WayV 4K Face Cam' },
+          { title: 'Regular 理所当然', cover: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80', url: '#', intro: 'WayV 舞台直拍' },
+          { title: 'Lovely 现代舞', cover: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=600&q=80', url: '#', intro: 'Ten & WinWin Choreography' },
+          { title: 'Kick Back 练习室', cover: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80', url: '#', intro: 'WayV 练习室直拍' }
+        ]
+      },
+      'interview': {
+        title: 'Interview',
+        subtitle: '采访与对话',
+        desc: '杂志专访、幕后访谈、深度对话——了解舞台之外的真实WinWin。',
+        layout: 'even',
+        items: [
+          { title: 'COSMO 专访', cover: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=600&q=80', url: '#', intro: '封面故事' },
+          { title: 'GQ 对话', cover: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80', url: '#', intro: '深度访谈' },
+          { title: 'VOGUE 幕后', cover: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80', url: '#', intro: '拍摄花絮' },
+          { title: 'ELLE 快问快答', cover: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80', url: '#', intro: '趣味问答' },
+          { title: '时尚芭莎', cover: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80', url: '#', intro: '杂志大片' },
+          { title: '微博之夜采访', cover: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80', url: '#', intro: '红毯采访' }
+        ]
+      },
+      'fan-made': {
+        title: 'Fan-made',
+        subtitle: '粉丝创作',
+        desc: '来自全球粉丝的创作——剪辑、插画、应援，爱的无数种表达方式。',
+        layout: 'even',
+        items: [
+          { title: 'Best Fan Edit 2024', cover: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80', url: '#', intro: '粉丝剪辑合集' },
+          { title: 'Fan Art Collection', cover: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80', url: '#', intro: '粉丝画作' },
+          { title: 'Birthday Project 2024', cover: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80', url: '#', intro: '生日应援项目' },
+          { title: 'WinWin Fancam Archive', cover: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=600&q=80', url: '#', intro: '直拍档案馆' },
+          { title: 'Support Banner Gallery', cover: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=600&q=80', url: '#', intro: '应援横幅集' },
+          { title: 'Global Fan Messages', cover: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80', url: '#', intro: '全球粉丝留言' }
+        ]
+      },
+      'guzhuang': {
+        title: 'Period Costume',
+        subtitle: '古装',
+        desc: '从杨羡到叶限，古装造型下的WinWin如画中人。',
+        images: [
+          { src: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=600&q=80', label: '五福临门·杨羡' },
+          { src: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80', label: '良陈美锦·叶限' },
+          { src: 'https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600&q=80', label: '子夜归·蝠朝' },
+          { src: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80', label: '恰逢春·许凤佳' },
+          { src: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80', label: '明月苍茫·莫提准' },
+          { src: 'https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=600&q=80', label: '冰雪谣·司徒威涟' },
+          { src: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80', label: '古装写真' },
+          { src: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80', label: '古风写真' }
+        ]
+      },
+      'sifu': {
+        title: 'Casual Wear',
+        subtitle: '私服',
+        desc: '机场、街拍、日常——私服下的WinWin，自在随性。',
+        images: [
+          { src: 'https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=600&q=80', label: '机场出发' },
+          { src: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80', label: '日常街拍' },
+          { src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80', label: '度假随拍' },
+          { src: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80', label: '品牌活动' },
+          { src: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80', label: '练习室' },
+          { src: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80', label: '幕后花絮' },
+          { src: 'images/sifu1.jpg', label: '日常穿搭' },
+          { src: 'images/sifu2.jpg', label: '私照合集' }
+        ]
+      },
+      'hongtan': {
+        title: 'Red Carpet & Events',
+        subtitle: '活动红毯',
+        desc: '聚光灯下的每一次亮相，都是焦点所在。',
+        images: [
+          { src: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=600&q=80', label: '微博之夜' },
+          { src: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=600&q=80', label: 'MAMA Awards' },
+          { src: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80', label: '品牌发布会' },
+          { src: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=600&q=80', label: '时尚盛典' },
+          { src: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80', label: '电影首映' },
+          { src: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80', label: '颁奖典礼' },
+          { src: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80', label: '品牌大秀' },
+          { src: 'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=600&q=80', label: '慈善晚宴' }
+        ]
+      },
+      'bizhi': {
+        title: 'HD Wallpapers',
+        subtitle: '高清壁纸',
+        desc: '精心整理的高清壁纸，为你的屏幕增添一抹WinWin的色彩。',
+        images: [
+          { src: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=600&q=80', label: '桌面壁纸 #01' },
+          { src: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80', label: '桌面壁纸 #02' },
+          { src: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=600&q=80', label: '桌面壁纸 #03' },
+          { src: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80', label: '桌面壁纸 #04' },
+          { src: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80', label: '手机壁纸 #01' },
+          { src: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80', label: '手机壁纸 #02' },
+          { src: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=600&q=80', label: '手机壁纸 #03' },
+          { src: 'https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=600&q=80', label: '手机壁纸 #04' }
+        ]
+      }
+    };
+
+    /* About page data */
+    const ABOUT_DATA = {
+      nameEn: 'Dong Sicheng',
+      nameKo: '\ub3d9\uc0ac\uccb1',
+      stageName: 'WINWIN',
+      birthday: '1997.10.28',
+      birthplace: '浙江温州',
+      agency: 'SM Entertainment',
+      group: 'NCT / WayV',
+      education: '中央戏剧学院 表演系',
+      height: '182cm',
+      mbti: 'INFP',
+      photo: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=800&q=80',
+      profile: '董思成（WINWIN），1997年10月28日出生于浙江省温州市，中国男演员、歌手。2015年考入中央戏剧学院表演系，2016年作为NCT成员正式出道，2019年随小分队WayV在中国出道。凭借出众的舞蹈功底（中国舞、现代舞）和清俊外形，在舞台上留下无数经典瞬间。',
+      career: [
+        { year: '2015', event: '考入中央戏剧学院表演系' },
+        { year: '2016.01', event: '作为NCT 127成员正式出道，发布《NCT #127》' },
+        { year: '2016.11', event: '首次出演国内综艺《天天向上》，展示中国舞' },
+        { year: '2018', event: '随NCT 2018发行专辑《NCT 2018 Empathy》' },
+        { year: '2019.01', event: '随WayV发行出道专《The Vision》，在中国出道' },
+        { year: '2019.03', event: '出演《快乐大本营》《我们的师父》' },
+        { year: '2021', event: '出演《奔跑吧9》；发行WayV三辑《Kick Back》' },
+        { year: '2023', event: '领衔主演网剧《25小时恋爱》，饰演言樾' },
+        { year: '2024', event: '主演《冰雪谣》，饰演司徒威涟' },
+        { year: '2025.01', event: '领衔主演《五福临门》，饰演杨羡，口碑热度双收' },
+        { year: '2025.08', event: '参演《子夜归》，饰演蝠朝' },
+        { year: '2026.02', event: '主演电影《镖人：风起大漠》，饰演大赖，票房14.48亿' },
+        { year: '2026.05', event: '领衔主演《良陈美锦》，饰演叶限' },
+        { year: '待播', event: '《恰逢春》《今天是太阳雨》《明月苍茫》' }
+      ],
+      works: [
+        { type: '电影', title: '镖人：风起大漠', role: '大赖', year: '2026' },
+        { type: '电视剧', title: '五福临门', role: '杨羡', year: '2025' },
+        { type: '电视剧', title: '良陈美锦', role: '叶限', year: '2026' },
+        { type: '电视剧', title: '子夜归', role: '蝠朝', year: '2025' },
+        { type: '电视剧', title: '冰雪谣', role: '司徒威涟', year: '2024' },
+        { type: '电视剧', title: '25小时恋爱', role: '言樾', year: '2023' },
+        { type: '电视剧', title: '恰逢春', role: '许凤佳', year: '待播' },
+        { type: '电视剧', title: '今天是太阳雨', role: '陈砚周', year: '待播' },
+        { type: '电视剧', title: '明月苍茫', role: '莫提准', year: '待播' }
+      ]
+    };
+
+    /* Category info for home page cards */
+    const CATEGORY_CARDS = [
+      { key: 'tv-series', label: 'Drama', name: 'TV Series', nameZh: '影视剧', count: '8+ 影视作品', cover: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&q=80' },
+      { key: 'variety-shows', label: 'Entertainment', name: 'Variety Shows', nameZh: '综艺节目', count: '8+ 综艺节目', cover: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80' },
+      { key: 'stage-focus', label: 'Performance', name: 'Stage Focus', nameZh: '舞台直拍', count: '8+ 舞台直拍', cover: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=600&q=80' },
+      { key: 'interview', label: 'Conversation', name: 'Interview', nameZh: '采访对话', count: '6+ 采访对话', cover: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=600&q=80' },
+      { key: 'fan-made', label: 'Creation', name: 'Fan-made', nameZh: '粉丝创作', count: '6+ 粉丝创作', cover: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80' }
+    ];
+
+    const GALLERY_CARDS = [
+      { key: 'guzhuang', name: 'Period Costume', nameZh: '古装', cover: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=600&q=80' },
+      { key: 'sifu', name: 'Casual Wear', nameZh: '私服', cover: 'https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=600&q=80' },
+      { key: 'hongtan', name: 'Red Carpet', nameZh: '活动红毯', cover: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=600&q=80' },
+      { key: 'bizhi', name: 'HD Wallpapers', nameZh: '高清壁纸', cover: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80' }
+    ];
+
+    /* =============================================
+       ROUTER
+       ============================================= */
+    const app = document.getElementById('app');
+
+    function navigateTo(type, key) {
+      closeAllDropdowns();
+      if (type === 'home') {
+        window.location.hash = '';
+      } else if (type === 'about') {
+        window.location.hash = '#/about';
+      } else {
+        window.location.hash = '#/' + type + '/' + key;
+      }
+    }
+
+    function getRoute() {
+      const hash = window.location.hash.slice(1);
+      if (!hash || hash === '/') return { type: 'home', key: null };
+      const parts = hash.replace(/^\//, '').split('/');
+      return { type: parts[0] || 'home', key: parts[1] || null };
+    }
+
+    function handleRoute() {
+      const route = getRoute();
+      window.scrollTo({ top: 0, behavior: 'auto' });
+
+      if (route.type === 'home') {
+        renderHome();
+      } else if (route.type === 'about') {
+        renderAboutPage();
+      } else if (route.type === 'category' && route.key && CONTENT[route.key]) {
+        renderCategoryPage(route.key);
+      } else if (route.type === 'gallery' && route.key && CONTENT[route.key]) {
+        renderGalleryPage(route.key);
+      } else {
+        renderHome();
+      }
+    }
+
+    window.addEventListener('hashchange', handleRoute);
+
+    /* =============================================
+       RENDER — Home Page
+       ============================================= */
+    function renderHome() {
+      app.innerHTML = `
+        <!-- HERO -->
+        <section class="hero">
+          <div class="hero-stars"></div>
+          <div class="hero-content">
+            <span class="hero-tag">Fan Resource Hub</span>
+            <h1 class="hero-title">
+              WINWIN
+              <span class="line-2">董思成 · Dong Sicheng</span>
+            </h1>
+            <p class="hero-subtitle">
+              A curated archive celebrating the artistry of WinWin — from stunning wallpapers to unforgettable stage moments.
+            </p>
+            <a class="hero-cta" onclick="document.getElementById('catSection').scrollIntoView({behavior:'smooth'})">
+              Explore Collection
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+          </div>
+        </section>
+
+        <!-- CATEGORIES -->
+        <section class="categories-section" id="catSection">
+          <div class="container">
+            <div class="section-header reveal">
+              <span class="section-label">Browse by Category</span>
+              <h2 class="section-title">Resource Categories</h2>
+              <p class="section-desc">Every facet of WinWin's journey — captured, categorized, and curated for fans.</p>
+            </div>
+            <div class="category-grid">
+              ${CATEGORY_CARDS.map((c, i) => `
+                <div class="category-card reveal reveal-delay-${i < 4 ? i + 1 : 4}" onclick="navigateTo('category','${c.key}')">
+                  <img class="category-card-img" src="${c.cover}" alt="${c.name}" loading="lazy" />
+                  <div class="category-card-overlay">
+                    <span class="category-card-label">${c.label}</span>
+                    <h3 class="category-card-name">${c.name}</h3>
+                    <p class="category-card-name-zh">${c.nameZh}</p>
+                    <p class="category-card-count">${c.count}</p>
+                  </div>
+                  <div class="category-card-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- GALLERY PREVIEW -->
+        <section class="gallery-preview">
+          <div class="container">
+            <div class="section-header reveal">
+              <span class="section-label">Photo Gallery</span>
+              <h2 class="section-title">Gallery</h2>
+              <p class="section-desc">古装、私服、红毯、壁纸 — 精选图片合集。</p>
+            </div>
+            <div class="gallery-preview-grid">
+              ${GALLERY_CARDS.map((g, i) => `
+                <div class="gallery-preview-card reveal reveal-delay-${i + 1}" onclick="navigateTo('gallery','${g.key}')">
+                  <img src="${g.cover}" alt="${g.nameZh}" loading="lazy" />
+                  <div class="gallery-preview-label">
+                    <span class="gallery-label-en">${g.name}</span>
+                    <span class="gallery-label-zh">${g.nameZh}</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats-section reveal">
+          <div class="container">
+            <div class="stats-grid">
+              <div><div class="stat-number">128+</div><div class="stat-label">HD Wallpapers</div></div>
+              <div><div class="stat-number">8+</div><div class="stat-label">TV Series & Films</div></div>
+              <div><div class="stat-number">200+</div><div class="stat-label">Stage Moments</div></div>
+              <div><div class="stat-number">10K+</div><div class="stat-label">Fans Worldwide</div></div>
+            </div>
+          </div>
+        </section>
+      `;
+      initReveal();
+    }
+
+    /* =============================================
+       RENDER — Category Page (video/content links)
+       ============================================= */
+    function renderCategoryPage(key) {
+      const data = CONTENT[key];
+      if (!data) return renderHome();
+
+      const isFeatured = data.layout === 'featured';
+
+      app.innerHTML = `
+        <div class="sub-page page-enter">
+          <div class="container">
+            <button class="back-btn" onclick="navigateTo('home')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Back to Home
+            </button>
+            <div class="breadcrumb">
+              <a onclick="navigateTo('home')">Home</a>
+              <span class="sep">/</span>
+              <a onclick="navigateTo('home')">Categories</a>
+              <span class="sep">/</span>
+              <span class="current">${data.title} · ${data.subtitle}</span>
+            </div>
+            <div class="sub-page-header">
+              <h1 class="sub-page-title">${data.title}</h1>
+              <p class="sub-page-desc">${data.desc}</p>
+            </div>
+            <div class="content-grid ${isFeatured ? 'layout-featured' : 'layout-even'}">
+              ${data.items.map((item, i) => {
+                if (isFeatured && i === 0) {
+                  return `
+                    <div class="content-card content-card-featured reveal">
+                      <img class="content-card-img" src="${item.cover}" alt="${item.title}" loading="lazy" />
+                      <div class="content-card-info">
+                        <span class="card-tag">${data.subtitle}</span>
+                        <h3 class="card-title">${item.title}</h3>
+                        <p class="card-intro">${item.intro}</p>
+                        <a class="card-link" href="${item.url}" target="_blank" rel="noopener">
+                          Watch Now
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </a>
+                      </div>
+                    </div>`;
+                }
+                return `
+                  <div class="content-card content-card-small reveal reveal-delay-${(i % 3) + 1}">
+                    <img class="content-card-img" src="${item.cover}" alt="${item.title}" loading="lazy" />
+                    <div class="content-card-info">
+                      <span class="card-tag">${data.subtitle}</span>
+                      <h3 class="card-title">${item.title}</h3>
+                      <p class="card-intro">${item.intro}</p>
+                      <a class="card-link" href="${item.url}" target="_blank" rel="noopener">
+                        Watch
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      </a>
+                    </div>
+                  </div>`;
+              }).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+      initReveal();
+    }
+
+    /* =============================================
+       RENDER — Gallery Page (image grid)
+       ============================================= */
+    function renderGalleryPage(key) {
+      const data = CONTENT[key];
+      if (!data) return renderHome();
+
+      app.innerHTML = `
+        <div class="sub-page page-enter">
+          <div class="container">
+            <button class="back-btn" onclick="navigateTo('home')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Back to Home
+            </button>
+            <div class="breadcrumb">
+              <a onclick="navigateTo('home')">Home</a>
+              <span class="sep">/</span>
+              <a onclick="navigateTo('home')">Gallery</a>
+              <span class="sep">/</span>
+              <span class="current">${data.title} · ${data.subtitle}</span>
+            </div>
+            <div class="sub-page-header">
+              <h1 class="sub-page-title">${data.title}</h1>
+              <p class="sub-page-desc">${data.desc}</p>
+            </div>
+            <div class="image-grid">
+              ${data.images.map((img, i) => `
+                <div class="image-grid-item reveal reveal-delay-${(i % 4) + 1}">
+                  <img src="${img.src}" alt="${img.label}" loading="lazy" />
+                  <div class="img-overlay"><span>${img.label}</span></div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+      initReveal();
+    }
+
+    /* =============================================
+       RENDER — About Page
+       ============================================= */
+    function renderAboutPage() {
+      const d = ABOUT_DATA;
+      app.innerHTML = `
+        <div class="sub-page page-enter">
+          <div class="container">
+            <button class="back-btn" onclick="navigateTo('home')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Back to Home
+            </button>
+            <div class="breadcrumb">
+              <a onclick="navigateTo('home')">Home</a>
+              <span class="sep">/</span>
+              <span class="current">About</span>
+            </div>
+
+            <!-- Profile Hero -->
+            <div class="about-hero reveal">
+              <div class="about-photo">
+                <img src="${d.photo}" alt="${d.stageName}" />
+              </div>
+              <div class="about-info">
+                <span class="about-stage-name">${d.stageName}</span>
+                <h1 class="about-name">${d.nameEn}</h1>
+                <p class="about-name-alt">董思成 · ${d.nameKo}</p>
+                <div class="about-tags">
+                  <span class="about-tag">演员</span>
+                  <span class="about-tag">歌手</span>
+                  <span class="about-tag">舞者</span>
+                </div>
+                <div class="about-meta-grid">
+                  <div class="about-meta-item">
+                    <span class="meta-label">Birthday</span>
+                    <span class="meta-value">${d.birthday}</span>
+                  </div>
+                  <div class="about-meta-item">
+                    <span class="meta-label">Birthplace</span>
+                    <span class="meta-value">${d.birthplace}</span>
+                  </div>
+                  <div class="about-meta-item">
+                    <span class="meta-label">Group</span>
+                    <span class="meta-value">${d.group}</span>
+                  </div>
+                  <div class="about-meta-item">
+                    <span class="meta-label">Agency</span>
+                    <span class="meta-value">${d.agency}</span>
+                  </div>
+                  <div class="about-meta-item">
+                    <span class="meta-label">Education</span>
+                    <span class="meta-value">${d.education}</span>
+                  </div>
+                  <div class="about-meta-item">
+                    <span class="meta-label">Height</span>
+                    <span class="meta-value">${d.height}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Profile Text -->
+            <div class="about-section reveal">
+              <h2 class="about-section-title">Profile</h2>
+              <p class="about-profile-text">${d.profile}</p>
+            </div>
+
+            <!-- Career Timeline -->
+            <div class="about-section reveal">
+              <h2 class="about-section-title">Career Timeline</h2>
+              <div class="timeline">
+                ${d.career.map(c => `
+                  <div class="timeline-item">
+                    <div class="timeline-year">${c.year}</div>
+                    <div class="timeline-event">${c.event}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Works Table -->
+            <div class="about-section reveal">
+              <h2 class="about-section-title">Filmography</h2>
+              <div class="works-table-wrap">
+                <table class="works-table">
+                  <thead>
+                    <tr>
+                      <th>Year</th>
+                      <th>Type</th>
+                      <th>Title</th>
+                      <th>Role</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${d.works.map(w => `
+                      <tr>
+                        <td>${w.year}</td>
+                        <td><span class="works-type-badge">${w.type}</span></td>
+                        <td class="works-title-cell">${w.title}</td>
+                        <td>${w.role}</td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      initReveal();
+    }
+
+    /* =============================================
+       UI — Dropdowns, Navigation, Search
+       ============================================= */
+    const navBtns = document.querySelectorAll('.nav-menu-btn');
+
+    navBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const target = btn.dataset.dropdown;
+        const dropdown = document.getElementById('dropdown-' + target);
+        const isOpen = dropdown.classList.contains('open');
+
+        closeAllDropdowns();
+
+        if (!isOpen) {
+          dropdown.classList.add('open');
+          btn.classList.add('active');
+        }
+      });
+    });
+
+    function closeAllDropdowns() {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+      navBtns.forEach(b => b.classList.remove('active'));
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-menu-item')) {
+        closeAllDropdowns();
+      }
+    });
+
+    /* Navbar scroll */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.pageYOffset > 60);
+    }, { passive: true });
+
+    /* Search */
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchInput = document.getElementById('searchInput');
+
+    document.getElementById('searchOpen').addEventListener('click', () => {
+      searchOverlay.classList.add('active');
+      setTimeout(() => searchInput.focus(), 300);
+    });
+
+    document.getElementById('searchClose').addEventListener('click', closeSearch);
+    searchOverlay.addEventListener('click', (e) => { if (e.target === searchOverlay) closeSearch(); });
+
+    function closeSearch() {
+      searchOverlay.classList.remove('active');
+      searchInput.value = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeSearch(); closeMobileNav(); }
+    });
+
+    /* Mobile Nav */
+    const mobileNav = document.getElementById('mobileNav');
+
+    document.getElementById('mobileOpen').addEventListener('click', () => {
+      mobileNav.classList.add('active');
+    });
+
+    document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+
+    function closeMobileNav() {
+      mobileNav.classList.remove('active');
+    }
+
+    /* Scroll Reveal */
+    function initReveal() {
+      const revealEls = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(el => observer.observe(el));
+    }
+
+    /* =============================================
+       INIT
+       ============================================= */
+    handleRoute();
+    </script>
+
+  </body>
+</html>
